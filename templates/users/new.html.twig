@@ -1,0 +1,100 @@
+{# new.html.twig #}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Balance Hub</div>
+        <div class="menu">
+            <a href="#">Accueil</a>
+            <a href="#">À propos</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <!-- Body of Form starts -->
+    <div class="container">
+        <form method="post" action="{{ path('app_users_new') }}">
+            {{ form_start(form) }}
+            <!-- Name -->
+            <div class="box">
+                {{ form_label(form.name, 'Name:', {'label_attr': {'class': 'fl fontLabel'}}) }}
+                <div class="new iconBox">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </div>
+                <div class="fr">
+                    {{ form_widget(form.name, {'attr': {'class': 'textBox', 'placeholder': 'First Name', 'autofocus': 'on'}}) }}
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!-- Email ID -->
+            <div class="box">
+                {{ form_label(form.email, 'Email ID:', {'label_attr': {'class': 'fl fontLabel'}}) }}
+                <div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                <div class="fr">
+                    {{ form_widget(form.email, {'attr': {'class': 'textBox', 'placeholder': 'Email Id'}}) }}
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!-- Age -->
+            <div class="box">
+                {{ form_label(form.age, 'Age:', {'label_attr': {'class': 'fl fontLabel'}}) }}
+                <div class="fl iconBox"><i class="fa fa-phone-square" aria-hidden="true"></i></div>
+                <div class="fr">
+                    {{ form_widget(form.age, {'attr': {'class': 'textBox', 'placeholder': 'Age'}}) }}
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!-- Gender -->
+            <div class="box">
+                {{ form_label(form.genre, 'Gender:', {'label_attr': {'class': 'fl fontLabel'}}) }}
+                <div class="new iconBox">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </div>
+                <div class="fr">
+                    {{ form_widget(form.genre, {'attr': {'class': 'textBox', 'placeholder': 'Gender'}}) }}
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!-- Phone No. -->
+            <div class="box">
+                {{ form_label(form.numTel, 'Phone No.:', {'label_attr': {'class': 'fl fontLabel'}}) }}
+                <div class="fl iconBox"><i class="fa fa-phone-square" aria-hidden="true"></i></div>
+                <div class="fr">
+                    {{ form_widget(form.numTel, {'attr': {'class': 'textBox', 'placeholder': 'Phone No.'}}) }}
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!-- Adresse -->
+            <div class="box">
+                {{ form_label(form.adresse, 'Adresse:', {'label_attr': {'class': 'fl fontLabel'}}) }}
+                <div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                <div class="fr">
+                    {{ form_widget(form.adresse, {'attr': {'class': 'textBox', 'placeholder': 'Adresse'}}) }}
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!-- Password -->
+            <div class="box">
+                {{ form_label(form.password, 'Password:', {'label_attr': {'class': 'fl fontLabel'}}) }}
+                <div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
+                <div class="fr">
+                    {{ form_widget(form.password, {'attr': {'class': 'textBox', 'placeholder': 'Password'}}) }}
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!-- Submit Button -->
+            <div class="box" style="background: #2d3e3f">
+                <button type="submit" class="submit">SIgn Up</button>
+            </div>
+            {{ form_end(form) }}
+        </form>
+    </div>
+    <!-- Body of Form ends -->
+</body>
+</html>
